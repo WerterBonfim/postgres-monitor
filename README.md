@@ -44,3 +44,12 @@ cd backend && dotnet build PostgresMonitor.slnx
 # Frontend
 cd frontend && pnpm build
 ```
+
+## Licença
+
+Licenciado sob [Apache License 2.0](LICENSE).
+
+Copyright © 2026 Werter Bonfim.
+
+Você pode usar, modificar e distribuir o projeto, desde que mantenha a
+atribuição ao autor (veja também o arquivo [NOTICE](NOTICE)).
