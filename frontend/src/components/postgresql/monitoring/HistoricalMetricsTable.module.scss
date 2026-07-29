@@ -1,0 +1,27 @@
+@use '../mixins' as *;
+
+.historical-table {
+  padding: 1.5rem;
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__scroll {
+    overflow-x: auto;
+  }
+
+  &__table {
+    @include pg-data-table;
+  }
+
+  &__period-end {
+    color: hsl(var(--muted-foreground));
+  }
+}

@@ -1,0 +1,46 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid transparent;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  transition: background-color 0.15s ease, color 0.15s ease;
+
+  &--default {
+    background-color: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+  }
+
+  &--secondary {
+    background-color: hsl(var(--secondary));
+    color: hsl(var(--secondary-foreground));
+  }
+
+  &--destructive {
+    background-color: hsl(var(--destructive));
+    color: hsl(var(--destructive-foreground));
+  }
+
+  &--outline {
+    border-color: hsl(var(--border));
+    color: hsl(var(--foreground));
+    background-color: transparent;
+  }
+
+  &--success {
+    background-color: hsl(var(--success));
+    color: #fff;
+  }
+
+  &--warning {
+    background-color: hsl(var(--warning));
+    color: #fff;
+  }
+
+  &--danger {
+    background-color: hsl(var(--danger));
+    color: #fff;
+  }
+}

@@ -1,0 +1,169 @@
+@use '../mixins' as *;
+
+.index-types-guide {
+  @include pg-stack(1.5rem);
+
+  &__loading {
+    @include pg-row(0.5rem, center, center);
+    padding: 2rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__spin {
+    @include pg-spin;
+  }
+
+  &__summary {
+    padding: 1rem;
+  }
+
+  &__summary-header {
+    @include pg-row(0.5rem);
+    margin-bottom: 1rem;
+  }
+
+  &__summary-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &__summary-grid {
+    @include pg-grid-responsive(180px, 1rem);
+  }
+
+  &__summary-value {
+    font-size: 1.125rem;
+    font-weight: 500;
+
+    &--success {
+      color: hsl(142 71% 45%);
+    }
+  }
+
+  &__section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    @include pg-row(0.5rem);
+
+    &--success {
+      color: hsl(142 71% 45%);
+    }
+  }
+
+  &__cards {
+    @include pg-stack(1rem);
+  }
+}
+
+.index-type-card {
+  padding: 1.5rem;
+
+  &__header {
+    @include pg-row(0, flex-start, space-between);
+    align-items: flex-start;
+    margin-bottom: 1rem;
+  }
+
+  &__title-row {
+    @include pg-row(0.75rem);
+    align-items: flex-start;
+  }
+
+  &__icon-wrap {
+    padding: 0.5rem;
+    background-color: hsl(var(--primary) / 0.1);
+    border-radius: var(--radius);
+    color: hsl(var(--primary));
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    @include pg-row(0.5rem);
+    flex-wrap: wrap;
+  }
+
+  &__meta {
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+    margin-top: 0.25rem;
+  }
+
+  &__body {
+    @include pg-stack(1rem);
+  }
+
+  &__field-header {
+    @include pg-row(0.5rem);
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  &__field-text {
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__pros-cons {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__pros {
+    padding: 0.75rem;
+    background-color: hsl(142 71% 45% / 0.1);
+    border: 1px solid hsl(142 71% 45% / 0.3);
+    border-radius: var(--radius);
+  }
+
+  &__cons {
+    padding: 0.75rem;
+    background-color: hsl(25 95% 53% / 0.1);
+    border: 1px solid hsl(25 95% 53% / 0.3);
+    border-radius: var(--radius);
+  }
+
+  &__pros-title {
+    @include pg-row(0.5rem);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(142 50% 25%);
+    margin-bottom: 0.5rem;
+  }
+
+  &__cons-title {
+    @include pg-row(0.5rem);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(25 80% 30%);
+    margin-bottom: 0.5rem;
+  }
+
+  &__pros-text {
+    font-size: 0.875rem;
+    color: hsl(142 50% 25%);
+  }
+
+  &__cons-text {
+    font-size: 0.875rem;
+    color: hsl(25 80% 30%);
+  }
+
+  &__example {
+    padding: 0.75rem;
+    background-color: hsl(var(--muted));
+    border-radius: calc(var(--radius) - 2px);
+
+    code {
+      font-size: 0.75rem;
+      font-family: ui-monospace, monospace;
+    }
+  }
+}

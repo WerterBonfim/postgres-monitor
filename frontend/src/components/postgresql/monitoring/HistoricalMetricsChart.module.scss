@@ -1,0 +1,66 @@
+@use '../mixins' as *;
+
+.historical-chart {
+  @include pg-stack(1rem);
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__card {
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__rows {
+    @include pg-stack(0.5rem);
+  }
+
+  &__row {
+    @include pg-row(0.5rem);
+  }
+
+  &__label {
+    width: 6rem;
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    flex-shrink: 0;
+  }
+
+  &__bar-track {
+    flex: 1;
+    background-color: hsl(var(--muted));
+    border-radius: 9999px;
+    height: 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__bar {
+    height: 100%;
+    border-radius: 9999px;
+    @include pg-row(0, center, flex-end);
+    padding-right: 0.5rem;
+    min-width: fit-content;
+
+    &--primary {
+      background-color: hsl(var(--primary));
+      color: hsl(var(--primary-foreground));
+    }
+
+    &--blue {
+      background-color: hsl(217 91% 60%);
+      color: white;
+    }
+  }
+
+  &__bar-value {
+    font-size: 0.75rem;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/bin": true,
+    "**/obj": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/dist-ssr": true,
+    "**/.vite": true,
+    "**/.turbo": true,
+    "**/.cache": true,
+    "**/.pnpm-store": true,
+    "**/coverage": true,
+    "**/.eslintcache": true,
+    "**/*.tsbuildinfo": true,
+    "**/TestResults": true,
+    "**/.idea": true,
+    "**/.vs": true,
+    "**/docker-data": true
+  },
+  "search.exclude": {
+    "**/bin": true,
+    "**/obj": true,
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.vite": true,
+    "**/coverage": true,
+    "**/pnpm-lock.yaml": true
+  },
+  "files.watcherExclude": {
+    "**/bin/**": true,
+    "**/obj/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/.vite/**": true
+  }
+}

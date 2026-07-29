@@ -1,0 +1,76 @@
+@use '../mixins' as *;
+
+.info-button {
+  &__trigger {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: hsl(var(--muted-foreground));
+
+    &:hover {
+      color: hsl(var(--foreground));
+    }
+  }
+
+  &__close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__title {
+    @include pg-row(0.5rem);
+    padding-right: 2rem;
+  }
+
+  &__body {
+    @include pg-stack(1.5rem);
+    margin-top: 1rem;
+  }
+
+  &__alert {
+    &--good {
+      border-color: hsl(142 71% 45% / 0.5);
+      background-color: hsl(142 71% 45% / 0.1);
+    }
+
+    &--warning {
+      border-color: hsl(45 93% 47% / 0.5);
+      background-color: hsl(45 93% 47% / 0.1);
+    }
+
+    &--critical {
+      border-color: hsl(var(--destructive) / 0.5);
+      background-color: hsl(var(--destructive) / 0.1);
+    }
+  }
+
+  &__alert-title {
+    @include pg-row(0, center, space-between);
+  }
+
+  &__alert-value {
+    font-size: 1.125rem;
+    font-weight: 700;
+  }
+
+  &__section-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    @include pg-row(0.5rem);
+  }
+
+  &__section-text {
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__list {
+    list-style: disc;
+    padding-left: 1.25rem;
+    @include pg-stack(0.25rem);
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+  }
+}

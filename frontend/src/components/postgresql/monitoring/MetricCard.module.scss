@@ -1,0 +1,73 @@
+@use '../mixins' as *;
+
+.metric-card {
+  padding: 1rem;
+
+  &--default {
+    border-color: hsl(var(--border));
+  }
+
+  &--success {
+    border-color: hsl(142 71% 45% / 0.5);
+    background-color: hsl(142 71% 45% / 0.05);
+  }
+
+  &--warning {
+    border-color: hsl(45 93% 47% / 0.5);
+    background-color: hsl(45 93% 47% / 0.05);
+  }
+
+  &--destructive {
+    border-color: hsl(var(--destructive) / 0.5);
+    background-color: hsl(var(--destructive) / 0.05);
+  }
+
+  &__body {
+    @include pg-row(0, flex-start, space-between);
+    align-items: flex-start;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__header {
+    @include pg-row(0.5rem);
+    margin-bottom: 0.25rem;
+  }
+
+  &__icon {
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+
+  &__description {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    margin-top: 0.25rem;
+  }
+
+  &__trend {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+
+    &--up {
+      color: hsl(142 71% 45%);
+    }
+
+    &--down {
+      color: hsl(var(--destructive));
+    }
+  }
+}

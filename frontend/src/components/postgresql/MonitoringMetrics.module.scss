@@ -1,0 +1,320 @@
+@use './mixins' as *;
+
+.monitoring-metrics {
+  @include pg-stack(1rem);
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__header {
+    @include pg-row(0, center, space-between);
+  }
+
+  &__controls-card {
+    padding: 1.5rem;
+  }
+
+  &__controls {
+    @include pg-stack(1rem);
+  }
+
+  &__connection-row {
+    @include pg-row(1rem, flex-end);
+    flex-wrap: wrap;
+  }
+
+  &__connection-field {
+    flex: 1;
+    min-width: 240px;
+  }
+
+  &__label {
+    @include pg-label;
+    margin-bottom: 0.5rem;
+  }
+
+  &__select {
+    @include pg-select;
+  }
+
+  &__collect-btn {
+    @include pg-row(0.5rem);
+  }
+
+  &__spin {
+    @include pg-spin;
+  }
+
+  &__polling {
+    @include pg-row(1rem);
+    flex-wrap: wrap;
+    padding-top: 0.5rem;
+    border-top: 1px solid hsl(var(--border));
+  }
+
+  &__polling-checkbox {
+    @include pg-row(0.5rem);
+  }
+
+  &__polling-interval {
+    @include pg-row(0.5rem);
+  }
+
+  &__interval-input {
+    width: 6rem;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid hsl(var(--input));
+    border-radius: calc(var(--radius) - 2px);
+    background-color: hsl(var(--background));
+    font-size: 0.875rem;
+  }
+
+  &__polling-status {
+    @include pg-row(0.5rem);
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__polling-dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    background-color: hsl(142 71% 45%);
+    border-radius: 9999px;
+    animation: pg-pulse 2s ease-in-out infinite;
+  }
+
+  &__loading {
+    text-align: center;
+    padding: 2rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__pg-stat-card {
+    padding: 1.5rem;
+  }
+
+  &__pg-stat-header {
+    @include pg-row(0, center, space-between);
+    margin-bottom: 1rem;
+  }
+
+  &__pg-stat-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &__tab-content {
+    @include pg-stack(1rem);
+    margin-top: 1rem;
+  }
+
+  &__tab-trigger {
+    @include pg-row(0.5rem);
+  }
+
+  &__recommendations-header {
+    @include pg-row(0, center, space-between);
+  }
+
+  &__section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &__recommendations-list {
+    @include pg-stack(1rem);
+  }
+
+  &__efficiency-grid {
+    @include pg-grid-responsive(280px, 1rem);
+  }
+
+  &__temp-card {
+    padding: 1.5rem;
+  }
+
+  &__temp-header {
+    @include pg-row(0.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  &__temp-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__temp-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 0.5rem;
+  }
+
+  &__temp-desc {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    margin-top: 0.25rem;
+  }
+
+  &__table-card {
+    padding: 1.5rem;
+  }
+
+  &__table-header {
+    @include pg-row(0, center, space-between);
+    margin-bottom: 1rem;
+  }
+
+  &__table-scroll {
+    overflow-x: auto;
+  }
+
+  &__table {
+    @include pg-data-table;
+
+    th:nth-child(n + 3),
+    td:nth-child(n + 3):not(:last-child) {
+      text-align: right;
+    }
+
+    th:last-child,
+    td:last-child {
+      text-align: center;
+    }
+  }
+
+  &__table-name-cell {
+    font-weight: 500;
+    @include pg-row(0.5rem);
+  }
+
+  &__alert-warning {
+    border-color: hsl(45 93% 47% / 0.5);
+    background-color: hsl(45 93% 47% / 0.1);
+  }
+
+  &__alert-title-row {
+    @include pg-row(0, center, space-between);
+  }
+
+  &__info-card {
+    @include pg-info-panel;
+    padding: 1rem;
+  }
+
+  &__info-row {
+    @include pg-row(0.75rem, flex-start);
+  }
+
+  &__info-content {
+    flex: 1;
+
+    h4 {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      color: hsl(217 91% 25%);
+    }
+  }
+
+  &__info-text {
+    font-size: 0.875rem;
+    color: hsl(217 91% 35%);
+    @include pg-stack(0.5rem);
+
+    ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+  }
+
+  &__warning-card {
+    @include pg-warning-panel;
+    padding: 1rem;
+  }
+
+  &__warning-row {
+    @include pg-row(0.75rem, flex-start);
+  }
+
+  &__warning-content {
+    flex: 1;
+
+    h4 {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    p {
+      font-size: 0.875rem;
+      color: hsl(var(--muted-foreground));
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__warning-btn {
+    @include pg-row(0.5rem);
+  }
+
+  &__wal-section {
+    @include pg-stack(1.5rem);
+  }
+
+  &__wal-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__system-card {
+    padding: 1.5rem;
+  }
+
+  &__system-rows {
+    @include pg-stack(0.5rem);
+    font-size: 0.875rem;
+  }
+
+  &__system-row {
+    @include pg-row(0, center, space-between);
+  }
+
+  &__system-label {
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__system-code {
+    font-size: 0.75rem;
+    font-family: ui-monospace, monospace;
+  }
+
+  &__history-controls {
+    padding: 1rem;
+  }
+
+  &__history-header {
+    @include pg-row(0, center, space-between);
+    margin-bottom: 1rem;
+  }
+
+  &__period-buttons {
+    @include pg-row(0.5rem);
+  }
+}
+
+@keyframes pg-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}

@@ -1,0 +1,134 @@
+@use './mixins' as *;
+
+.query-plan-executor {
+  @include pg-stack(1rem);
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__form-card {
+    padding: 1.5rem;
+    @include pg-stack(1rem);
+  }
+
+  &__field {
+    @include pg-stack(0.5rem);
+  }
+
+  &__label {
+    @include pg-label;
+  }
+
+  &__select {
+    @include pg-select;
+  }
+
+  &__textarea {
+    @include pg-textarea;
+  }
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__error-card {
+    padding: 1rem;
+    background-color: hsl(var(--destructive) / 0.1);
+    border-color: hsl(var(--destructive));
+    color: hsl(var(--destructive));
+  }
+
+  &__results {
+    @include pg-stack(1rem);
+  }
+
+  &__result-card {
+    padding: 1.5rem;
+  }
+
+  &__result-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    font-size: 0.875rem;
+  }
+
+  &__metric-label {
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__metric-value {
+    margin-left: 0.5rem;
+    font-weight: 600;
+  }
+
+  &__section-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__plan-tree {
+    border: 1px solid hsl(var(--border));
+    border-radius: calc(var(--radius) - 2px);
+    padding: 1rem;
+    background-color: hsl(var(--muted) / 0.5);
+  }
+
+  &__plan-node {
+    margin-bottom: 0.5rem;
+  }
+
+  &__plan-node-header {
+    @include pg-row(0.5rem);
+    margin-bottom: 0.25rem;
+  }
+
+  &__plan-node-meta {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    margin-left: 1rem;
+    @include pg-stack(0.25rem);
+  }
+
+  &__problems-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--destructive));
+    margin-bottom: 0.5rem;
+  }
+
+  &__problems-list {
+    list-style: disc;
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+    @include pg-stack(0.25rem);
+  }
+
+  &__recommendations {
+    @include pg-stack(0.5rem);
+  }
+
+  &__rec-card {
+    padding: 0.75rem;
+  }
+
+  &__rec-description {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+  }
+
+  &__rec-code {
+    font-size: 0.75rem;
+    @include pg-code-block;
+    margin-top: 0.5rem;
+  }
+}

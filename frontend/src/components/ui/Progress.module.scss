@@ -1,0 +1,28 @@
+.progress {
+  position: relative;
+  height: 1rem;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-color: hsl(var(--secondary));
+
+  &__bar {
+    height: 100%;
+    width: 100%;
+    flex: 1;
+    background-color: hsl(var(--primary));
+    transition: transform 0.2s ease;
+  }
+
+  &__bar--success {
+    background-color: hsl(var(--success));
+  }
+
+  &__bar--warning {
+    background-color: hsl(var(--warning));
+  }
+
+  &__bar--danger {
+    background-color: hsl(var(--danger));
+  }
+}

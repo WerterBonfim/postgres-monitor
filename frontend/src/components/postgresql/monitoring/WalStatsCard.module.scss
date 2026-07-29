@@ -1,0 +1,41 @@
+@use '../mixins' as *;
+
+.wal-stats {
+  @include pg-grid-responsive(280px, 1rem);
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__item {
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__rows {
+    @include pg-stack(0.25rem);
+  }
+
+  &__row {
+    @include pg-row(0, center, space-between);
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__text {
+    font-size: 0.875rem;
+  }
+}

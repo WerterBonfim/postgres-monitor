@@ -1,0 +1,78 @@
+@use './mixins' as *;
+
+.pg-stat-info {
+  @include pg-stack(1.5rem);
+  padding: 1.5rem;
+
+  &__title {
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  &__intro {
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__card {
+    padding: 1.5rem;
+  }
+
+  &__card-header {
+    @include pg-row(0.5rem);
+    margin-bottom: 1rem;
+  }
+
+  &__card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  &__card-text {
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 1rem;
+  }
+
+  &__code {
+    @include pg-code-block;
+  }
+
+  &__config-list {
+    @include pg-stack(1rem);
+  }
+
+  &__config-item {
+    @include pg-stack(0.5rem);
+  }
+
+  &__config-header {
+    @include pg-row(0.5rem);
+    margin-bottom: 0.5rem;
+  }
+
+  &__config-name {
+    font-weight: 500;
+  }
+
+  &__list {
+    list-style: disc;
+    padding-left: 1.25rem;
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+    @include pg-stack(0.25rem);
+  }
+
+  &__features-card {
+    @include pg-info-panel;
+    padding: 1.5rem;
+  }
+
+  &__features-title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__warning-icon {
+    color: hsl(45 93% 47%);
+  }
+}

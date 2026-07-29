@@ -1,0 +1,89 @@
+@use '../mixins' as *;
+
+.query-history {
+  @include pg-stack(1rem);
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__header {
+    @include pg-row(0, center, space-between);
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &__list {
+    @include pg-stack(1rem);
+  }
+
+  &__card {
+    padding: 1rem;
+  }
+
+  &__card-header {
+    @include pg-row(0.5rem);
+    margin-bottom: 0.75rem;
+  }
+
+  &__date {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__impact-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+  }
+
+  &__impact-text {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 0.75rem;
+  }
+
+  &__query {
+    font-size: 0.75rem;
+    overflow-x: auto;
+    background-color: hsl(var(--muted) / 0.5);
+    padding: 0.75rem;
+    border-radius: calc(var(--radius) - 2px);
+    font-family: ui-monospace, monospace;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin-bottom: 0.75rem;
+  }
+
+  &__stats {
+    @include pg-grid-responsive(140px, 1rem);
+    font-size: 0.75rem;
+  }
+
+  &__stat {
+    @include pg-row(0.25rem);
+  }
+
+  &__stat-value {
+    font-weight: 500;
+  }
+
+  &__stat-label {
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__temp-warning {
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    @include pg-warning-panel;
+
+    p {
+      font-size: 0.75rem;
+      color: hsl(45 93% 30%);
+    }
+  }
+}

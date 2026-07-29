@@ -1,0 +1,120 @@
+@use '../mixins' as *;
+
+.postgres-logs {
+  @include pg-stack(1rem);
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__loading-icon {
+    @include pg-spin;
+    margin: 0 auto 0.5rem;
+    display: block;
+  }
+
+  &__warning-card {
+    @include pg-warning-panel;
+    padding: 1rem;
+
+    p {
+      font-size: 0.875rem;
+      color: hsl(45 93% 30%);
+    }
+  }
+
+  &__header {
+    @include pg-row(0, center, space-between);
+  }
+
+  &__title-row {
+    @include pg-row(0.5rem);
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &__controls {
+    @include pg-row(0.5rem);
+  }
+
+  &__auto-scroll {
+    @include pg-row(0.5rem);
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__viewer {
+    overflow: hidden;
+    padding: 0;
+  }
+
+  &__terminal {
+    background-color: hsl(222 47% 6%);
+    color: hsl(142 71% 45%);
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+    padding: 1rem;
+    overflow-x: auto;
+    max-height: 600px;
+    overflow-y: auto;
+  }
+
+  &__line {
+    @include pg-row(0.5rem, flex-start);
+    padding-block: 0.25rem;
+
+    &:hover {
+      background-color: hsl(222 47% 10% / 0.5);
+    }
+
+    &--error {
+      color: hsl(var(--destructive));
+    }
+
+    &--warning {
+      color: hsl(45 93% 47%);
+    }
+
+    &--info {
+      color: hsl(217 91% 60%);
+    }
+
+    &--unknown {
+      color: hsl(var(--muted-foreground));
+    }
+  }
+
+  &__line-icon {
+    flex-shrink: 0;
+    margin-top: 0.125rem;
+  }
+
+  &__line-text {
+    flex: 1;
+    word-break: break-word;
+    white-space: pre-wrap;
+  }
+
+  &__legend {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__legend-item {
+    &--error {
+      color: hsl(var(--destructive));
+    }
+
+    &--warning {
+      color: hsl(45 93% 47%);
+    }
+
+    &--info {
+      color: hsl(217 91% 60%);
+    }
+  }
+}

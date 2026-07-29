@@ -1,0 +1,50 @@
+@use '../mixins' as *;
+
+.query-details-table {
+  padding: 1.5rem;
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__search {
+    margin-bottom: 1rem;
+    @include pg-search-wrap;
+  }
+
+  &__scroll {
+    overflow-x: auto;
+  }
+
+  &__table {
+    @include pg-data-table;
+  }
+
+  &__sort-btn {
+    @include pg-row(0.25rem);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: inherit;
+    font: inherit;
+    padding: 0;
+
+    &:hover {
+      color: hsl(var(--primary));
+    }
+  }
+
+  &__query-code {
+    font-size: 0.75rem;
+    background-color: hsl(var(--muted));
+    padding: 0.25rem;
+    border-radius: calc(var(--radius) - 4px);
+    max-width: 28rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: ui-monospace, monospace;
+  }
+}

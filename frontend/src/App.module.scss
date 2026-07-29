@@ -1,0 +1,24 @@
+.app-loading {
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__inner {
+    text-align: center;
+  }
+
+  &__spinner {
+    animation: spin 1s linear infinite;
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    border-bottom: 2px solid hsl(var(--primary));
+    margin: 0 auto 1rem;
+  }
+
+  &__text {
+    color: hsl(var(--muted-foreground));
+  }
+}

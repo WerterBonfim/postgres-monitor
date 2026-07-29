@@ -1,0 +1,92 @@
+@use '../mixins' as *;
+
+.detail-modal {
+  &__title {
+    @include pg-row(0.5rem);
+  }
+
+  &__loading {
+    @include pg-row(0.5rem, center, center);
+    padding: 2rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__spin {
+    @include pg-spin;
+  }
+
+  &__body {
+    @include pg-stack(1rem);
+  }
+
+  &__section {
+    padding: 1rem;
+  }
+
+  &__section-title {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    @include pg-row(0.5rem);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__grid--3 {
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__field-label {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__field-value {
+    font-weight: 500;
+
+    &--lg {
+      font-size: 1.125rem;
+    }
+  }
+
+  &__field-row {
+    @include pg-row(0.5rem);
+    flex-wrap: wrap;
+  }
+
+  &__subsection {
+    @include pg-stack(1rem);
+  }
+
+  &__meta-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    font-size: 0.75rem;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__code {
+    @include pg-code-block;
+  }
+
+  &__table-scroll {
+    overflow-x: auto;
+  }
+
+  &__table {
+    @include pg-data-table;
+  }
+}

@@ -1,0 +1,85 @@
+@use '../mixins' as *;
+
+.index-stats-table {
+  padding: 1.5rem;
+
+  &__inner {
+    @include pg-stack(1rem);
+  }
+
+  &__header {
+    @include pg-row(0, center, space-between);
+  }
+
+  &__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  &__filters {
+    @include pg-row(1rem);
+    flex-wrap: wrap;
+  }
+
+  &__search {
+    @include pg-search-wrap;
+    flex: 1;
+    min-width: 200px;
+  }
+
+  &__filter-badges {
+    @include pg-row(0.5rem);
+    flex-wrap: wrap;
+  }
+
+  &__filter-badge {
+    cursor: pointer;
+  }
+
+  &__scroll {
+    overflow-x: auto;
+  }
+
+  &__table {
+    @include pg-data-table;
+
+    th:nth-child(n + 4),
+    td:nth-child(n + 4):not(:last-child) {
+      text-align: right;
+    }
+
+    th:last-child,
+    td:last-child {
+      text-align: center;
+    }
+  }
+
+  &__index-name {
+    font-family: ui-monospace, monospace;
+    font-size: 0.75rem;
+  }
+
+  &__table-name {
+    font-weight: 500;
+  }
+
+  &__empty-cell {
+    text-align: center;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__view-btn {
+    padding: 0.25rem;
+    background: none;
+    border: none;
+    border-radius: calc(var(--radius) - 4px);
+    cursor: pointer;
+    color: hsl(var(--muted-foreground));
+    transition: background-color 0.2s, color 0.2s;
+
+    &:hover {
+      background-color: hsl(var(--muted));
+      color: hsl(var(--foreground));
+    }
+  }
+}

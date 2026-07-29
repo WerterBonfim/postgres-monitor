@@ -1,0 +1,32 @@
+.postgresql-tools {
+  min-height: 100vh;
+  background-color: hsl(var(--background));
+  padding-bottom: 4rem;
+
+  &__container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding: 1rem;
+  }
+
+  &__back {
+    margin-bottom: 1rem;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  &__tabs-list {
+    margin-bottom: 1rem;
+  }
+
+  &__tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}

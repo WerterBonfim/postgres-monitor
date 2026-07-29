@@ -1,0 +1,139 @@
+@mixin pg-stack($gap: 1rem) {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+@mixin pg-row($gap: 0.5rem, $align: center, $justify: flex-start) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+}
+
+@mixin pg-grid-responsive($min: 240px, $gap: 1rem) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($min, 1fr));
+  gap: $gap;
+}
+
+@mixin pg-empty {
+  text-align: center;
+  color: hsl(var(--muted-foreground));
+}
+
+@mixin pg-data-table {
+  width: 100%;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+
+  thead tr {
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  th {
+    padding: 0.5rem;
+    text-align: left;
+    font-weight: 500;
+  }
+
+  td {
+    padding: 0.5rem;
+    border-bottom: 1px solid hsl(var(--border));
+  }
+
+  tbody tr:hover {
+    background-color: hsl(var(--muted) / 0.5);
+  }
+}
+
+@mixin pg-info-panel {
+  padding: 1rem;
+  background-color: hsl(217 91% 60% / 0.1);
+  border: 1px solid hsl(217 91% 60% / 0.3);
+  border-radius: var(--radius);
+}
+
+@mixin pg-warning-panel {
+  padding: 1rem;
+  background-color: hsl(45 93% 47% / 0.1);
+  border: 1px solid hsl(45 93% 47% / 0.3);
+  border-radius: var(--radius);
+}
+
+@mixin pg-code-block {
+  background-color: hsl(var(--muted));
+  padding: 0.75rem;
+  border-radius: var(--radius);
+  font-family: ui-monospace, monospace;
+  font-size: 0.75rem;
+  overflow-x: auto;
+}
+
+@mixin pg-search-wrap {
+  position: relative;
+
+  svg {
+    position: absolute;
+    left: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  input {
+    padding-left: 2.25rem;
+  }
+}
+
+@mixin pg-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+@mixin pg-select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid hsl(var(--input));
+  border-radius: calc(var(--radius) - 2px);
+  background-color: hsl(var(--background));
+  font-size: 0.875rem;
+}
+
+@mixin pg-textarea {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid hsl(var(--input));
+  border-radius: calc(var(--radius) - 2px);
+  background-color: hsl(var(--background));
+  font-family: ui-monospace, monospace;
+  font-size: 0.875rem;
+  resize: vertical;
+}
+
+@mixin pg-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+@mixin pg-spin {
+  animation: pg-spin 1s linear infinite;
+}
+
+@keyframes pg-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

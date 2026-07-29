@@ -1,0 +1,39 @@
+@use '../mixins' as *;
+
+.memory-config {
+  @include pg-grid-responsive(280px, 1rem);
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__item {
+    padding: 1.5rem;
+  }
+
+  &__item--highlight {
+    grid-column: 1 / -1;
+    background-color: hsl(var(--primary) / 0.05);
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  &__value {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  &__value--large {
+    font-size: 1.875rem;
+  }
+
+  &__description {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+    margin-top: 0.25rem;
+  }
+}

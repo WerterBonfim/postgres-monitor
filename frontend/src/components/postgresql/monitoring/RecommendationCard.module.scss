@@ -1,0 +1,60 @@
+@use '../mixins' as *;
+
+.recommendation-card {
+  padding: 1rem;
+
+  &__header {
+    @include pg-row(0, flex-start, space-between);
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+  }
+
+  &__title-row {
+    @include pg-row(0.5rem);
+    align-items: flex-start;
+  }
+
+  &__icon {
+    color: hsl(var(--muted-foreground));
+    flex-shrink: 0;
+  }
+
+  &__title {
+    font-weight: 600;
+  }
+
+  &__column {
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__reason {
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+    margin-top: 0.25rem;
+  }
+
+  &__sql-block {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background-color: hsl(var(--muted) / 0.5);
+    border-radius: calc(var(--radius) - 2px);
+  }
+
+  &__sql-header {
+    @include pg-row(0, center, space-between);
+    margin-bottom: 0.5rem;
+  }
+
+  &__sql-label {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__sql-code {
+    font-size: 0.75rem;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-family: ui-monospace, monospace;
+  }
+}

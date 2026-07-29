@@ -1,0 +1,110 @@
+@use '../mixins' as *;
+
+.efficiency-gauge {
+  padding: 1.5rem;
+
+  &__inner {
+    @include pg-stack(0);
+    align-items: center;
+  }
+
+  &__header {
+    @include pg-row(0.5rem);
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__chart-wrap {
+    position: relative;
+  }
+
+  &__svg {
+    transform: rotate(-90deg);
+    width: 8rem;
+    height: 8rem;
+  }
+
+  &__track {
+    color: hsl(var(--muted));
+
+    &--good {
+      stroke: hsl(142 71% 45% / 0.2);
+    }
+
+    &--warning {
+      stroke: hsl(45 93% 47% / 0.2);
+    }
+
+    &--critical {
+      stroke: hsl(var(--destructive) / 0.2);
+    }
+  }
+
+  &__progress {
+    transition: stroke-dashoffset 0.5s ease;
+
+    &--good {
+      color: hsl(142 71% 45%);
+    }
+
+    &--warning {
+      color: hsl(45 93% 47%);
+    }
+
+    &--critical {
+      color: hsl(var(--destructive));
+    }
+  }
+
+  &__center {
+    position: absolute;
+    inset: 0;
+    @include pg-row(0, center, center);
+  }
+
+  &__value {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    &--good {
+      color: hsl(142 71% 45%);
+    }
+
+    &--warning {
+      color: hsl(45 93% 47%);
+    }
+
+    &--critical {
+      color: hsl(var(--destructive));
+    }
+  }
+
+  &__unit {
+    font-size: 0.75rem;
+    color: hsl(var(--muted-foreground));
+  }
+
+  &__status {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+
+    &--good {
+      color: hsl(142 71% 45%);
+    }
+
+    &--warning {
+      color: hsl(45 93% 47%);
+    }
+
+    &--critical {
+      color: hsl(var(--destructive));
+    }
+  }
+}

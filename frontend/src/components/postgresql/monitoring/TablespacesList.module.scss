@@ -1,0 +1,43 @@
+@use '../mixins' as *;
+
+.tablespaces-list {
+  padding: 1.5rem;
+
+  &__empty {
+    @include pg-empty;
+    padding: 1.5rem;
+  }
+
+  &__title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+
+  &__items {
+    @include pg-stack(0.5rem);
+  }
+
+  &__item {
+    padding: 1rem;
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+  }
+
+  &__item-header {
+    @include pg-row(0, center, space-between);
+    margin-bottom: 0.5rem;
+  }
+
+  &__name {
+    font-weight: 500;
+  }
+
+  &__location {
+    font-size: 0.875rem;
+    color: hsl(var(--muted-foreground));
+
+    code {
+      font-size: 0.75rem;
+    }
+  }
+}
